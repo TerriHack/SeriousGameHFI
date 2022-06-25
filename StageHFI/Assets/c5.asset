@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2798e08f6c51fc6449a9696969ee4a0b, type: 3}
+  m_Name: c5
+  m_EditorClassIdentifier: 
+  message: Choices 5
+  nextStep: {fileID: 11400000, guid: a04218478f001444d884cc4925f8af67, type: 2}
+  stepChoice1:
+    choiceText: c1
+    clientResponse: a1
+    isGoodAnswer: 1
+  stepChoice2:
+    choiceText: c2
+    clientResponse: a2
+    isGoodAnswer: 0
+  stepChoice3:
+    choiceText: c3
+    clientResponse: a3
+    isGoodAnswer: 0

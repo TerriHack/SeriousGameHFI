@@ -6,5 +6,4 @@ namespace Dialogue
     public class StepDiscours : Step
     {
     }
-
 }

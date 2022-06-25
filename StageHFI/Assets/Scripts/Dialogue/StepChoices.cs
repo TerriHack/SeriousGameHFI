@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Dialogue
@@ -14,7 +15,10 @@ namespace Dialogue
     [Serializable]
     public struct StepChoice
     {
-        public string response;
+        public string choiceText;
+        [TextArea]
+        public string clientResponse;
         public bool isGoodAnswer;
+        public Step nextStepAnswer;
     }
 }

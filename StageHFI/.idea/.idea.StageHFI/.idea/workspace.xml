@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="" />
+    <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/UI/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepDiscours.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepDiscours.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,16 +31,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "rider.run.widget.enabled.cache": "false",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Program Files (x86)\uNITY\2021.3.4f1\Editor\Unity.exe" />
@@ -74,6 +79,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

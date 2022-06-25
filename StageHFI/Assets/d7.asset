@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea632dc379af25a49984872aa4efb45f, type: 3}
-  m_Name: 3
+  m_Script: {fileID: 11500000, guid: 2c5ce45744dcd904f9a382b9ad37afde, type: 3}
+  m_Name: d7
   m_EditorClassIdentifier: 
-  message: info 3
-  nextStep: {fileID: 11400000, guid: 5c2d9e250e3380540a164e976636803b, type: 2}
-  trustCost: 1
+  message: a2-2
+  nextStep: {fileID: 11400000, guid: 9a51d694a10c9ed4e9c09d1fe54f5384, type: 2}
