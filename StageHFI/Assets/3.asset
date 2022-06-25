@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   message: info 3
+  nextStep: {fileID: 11400000, guid: 5c2d9e250e3380540a164e976636803b, type: 2}
   trustCost: 1
-  nextStep: {fileID: 0}
