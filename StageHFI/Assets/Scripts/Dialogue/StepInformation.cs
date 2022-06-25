@@ -6,6 +6,5 @@ namespace Dialogue
     public class StepInformation : Step
     {
         public int trustCost;
-        public Step nextStep;
     }
 }

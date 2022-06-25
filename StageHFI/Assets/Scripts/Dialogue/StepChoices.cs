@@ -16,6 +16,5 @@ namespace Dialogue
     {
         public string response;
         public bool isGoodAnswer;
-        public Step nextStep;
     }
 }

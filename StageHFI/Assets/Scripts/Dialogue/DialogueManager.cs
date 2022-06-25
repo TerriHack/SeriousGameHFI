@@ -7,7 +7,7 @@ namespace Dialogue
         [SerializeField] private Step startStep;
         private Step _currentStep;
 
-        private int _trust;
+        public int trust;
         
         private void Start()
         {
@@ -17,29 +17,51 @@ namespace Dialogue
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Space)) // Pour passer au discour d'après
             {
-                switch (_currentStep)
-                {
-                    case StepDiscours discours: BehaviourDiscours(discours); 
-                        break;
-                    case StepInformation info: BehaviourInfo(info);        
-                        break;
-                    case StepChoices choice:   BehaviourChoice(choice);  
-                        break;
-                }
+                _currentStep = _currentStep.nextStep;
+                DisplayCheck();
+            }
+        }
+
+        private void DisplayCheck()
+        {
+            switch (_currentStep)
+            {
+                case StepDiscours :
+                    DisplayStep();
+                    break;
+                case StepInformation info:
+                    if (trust >= info.trustCost) DisplayStep();
+                    else
+                    {
+                        _currentStep = info.nextStep;
+                        DisplayCheck();
+                    }
+                    break;
+                case StepChoices choices:
+                    DisplayStep();
+                    DisplayChoices();
+                    break;
             }
         }
 
         private void BehaviourDiscours(StepDiscours step)
         {
-            _currentStep = step.nextStep;
-            DisplayStep();
+            if(step.nextStep is StepInformation info)
+            {
+               
+            }
+            else
+            {
+                _currentStep = step.nextStep;
+                DisplayStep();
+            }
         }
 
         private void BehaviourInfo(StepInformation stepInformation)
         {
-            if (_trust >= stepInformation.trustCost)
+            if (trust >= stepInformation.trustCost)
             {
                 _currentStep = stepInformation;
             }
@@ -52,7 +74,7 @@ namespace Dialogue
 
         private void BehaviourChoice(StepChoices stepChoices)
         {
-            _currentStep = stepChoices.stepChoice1.nextStep;
+           // _currentStep = stepChoices.stepChoice1.nextStep;
             StepChoice choice = stepChoices.stepChoice1;
             DisplayStep();
         }
@@ -60,6 +82,11 @@ namespace Dialogue
         private void DisplayStep()
         {
             Debug.Log(_currentStep.message);
+        }
+
+        private void DisplayChoices()
+        {
+            
         }
     }
 }

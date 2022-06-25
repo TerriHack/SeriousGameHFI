@@ -8,5 +8,6 @@ namespace Dialogue
     {
         [TextArea] 
         public string message;
+        public Step nextStep;
     }
 }
