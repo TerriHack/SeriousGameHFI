@@ -18,11 +18,14 @@ MonoBehaviour:
     choiceText: c1
     clientResponse: a1
     isGoodAnswer: 1
+    nextStepAnswer: {fileID: 11400000, guid: a04218478f001444d884cc4925f8af67, type: 2}
   stepChoice2:
     choiceText: c2
     clientResponse: a2
     isGoodAnswer: 0
+    nextStepAnswer: {fileID: 11400000, guid: 0392bb2dbc1470c4eb84b01992a34548, type: 2}
   stepChoice3:
     choiceText: c3
     clientResponse: a3
     isGoodAnswer: 0
+    nextStepAnswer: {fileID: 11400000, guid: ffb1ed266aad49941a3ecf4852d0c77b, type: 2}
