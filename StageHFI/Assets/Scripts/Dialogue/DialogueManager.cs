@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 namespace Dialogue
 {
@@ -9,10 +10,10 @@ namespace Dialogue
 
         public int trust;
 
-        private bool clicked1;
-        private bool clicked2;
-        private bool clicked3;
+        private int clickedIndex;
 
+        private UIManager uiManager => UIManager.instance;
+        
         private void Start()
         {
             _currentStep = startStep;
@@ -25,22 +26,15 @@ namespace Dialogue
             {
                 if (_currentStep is StepChoices choices)
                 {
-                    if (clicked1)
+                    _currentStep = clickedIndex switch
                     {
-                        _currentStep = choices.stepChoice1.nextStepAnswer != null ? _currentStep = choices.stepChoice1.nextStepAnswer : _currentStep.nextStep;
-                    }
-                    else if (clicked2)
-                    {
-                        _currentStep = choices.stepChoice2.nextStepAnswer != null ? _currentStep = choices.stepChoice2.nextStepAnswer : _currentStep.nextStep;
-                    }
-                    else if (clicked3)
-                    {
-                        _currentStep = choices.stepChoice3.nextStepAnswer != null ? _currentStep = choices.stepChoice3.nextStepAnswer : _currentStep.nextStep;
-                    }
+                        0 => choices.stepChoice1.nextStepAnswer != null ? _currentStep = choices.stepChoice1.nextStepAnswer : _currentStep.nextStep,
+                        1 => choices.stepChoice2.nextStepAnswer != null ? _currentStep = choices.stepChoice2.nextStepAnswer : _currentStep.nextStep,
+                        2 => choices.stepChoice3.nextStepAnswer != null ? _currentStep = choices.stepChoice3.nextStepAnswer : _currentStep.nextStep,
+                        _ => _currentStep
+                    };
 
-                    clicked1 = false;
-                    clicked2 = false;
-                    clicked3 = false;
+                    clickedIndex =-1;
                     DisplayCheck();
                     return;
                 }
@@ -54,64 +48,65 @@ namespace Dialogue
         {
             switch (_currentStep)
             {
-                case StepDiscours:
-                    DisplayStep();
+                case StepDiscours: 
+                    DisplayStep(); 
                     break;
-                case StepInformation info:
+                case StepInformation info: 
                     if (trust >= info.trustCost) DisplayStep();
                     else
                     {
                         _currentStep = info.nextStep;
                         DisplayCheck();
                     }
-
                     break;
-                case StepChoices choices:
+                case StepChoices choices: 
                     DisplayStep();
                     DisplayChoices(choices);
                     break;
             }
         }
 
-        private void DisplayStep()
+        private void DisplayStep() =>  uiManager.dialogueText.text = _currentStep.message;
+
+        private void SetTextById(params int[] ids)
         {
-            UIManager.instance.dialogueText.text = _currentStep.message;
+            foreach (var id in ids)
+            {
+                uiManager.choiceText[id].text = StepChoiceByIndex(id).choiceText;
+            }
+            
+            uiManager.DisplayPossibleChoices();
         }
-
-        private void DisplayChoices(StepChoices choices)
+        
+        private void DisplayChoices(StepChoices choices) => SetTextById(0,1,2);
+       
+        private StepChoice StepChoiceByIndex(int id)
         {
-            UIManager.instance.choiceText[0].text = choices.stepChoice1.choiceText;
-            UIManager.instance.choiceText[1].text = choices.stepChoice2.choiceText;
-            UIManager.instance.choiceText[2].text = choices.stepChoice3.choiceText;
+            if (_currentStep is not StepChoices step)
+            {
+                throw new Exception("Current step isn't choice but you clicked on a choice ??");
+            }
 
-            UIManager.instance.DisplayPossibleChoices();
+            return id switch
+            {
+                0 => step.stepChoice1,
+                1 => step.stepChoice2,
+                2 => step.stepChoice3,
+                _ => throw new Exception("Did you forget to set an index on your button? all the same those GDs")
+            };
         }
-
-        public void ClickedChoice_1(StepChoices choices)
+        
+        public void ClickChoice(int index)
         {
-            clicked1 = true;
-            if (choices.stepChoice1.isGoodAnswer) trust++;
+            clickedIndex = index;
+            
+            if (StepChoiceByIndex(index).isGoodAnswer)
+            {
+                trust++;
+            }
 
-            UIManager.instance.dialogueText.text = choices.stepChoice1.clientResponse;
-            UIManager.instance.HideChoices();
-        }
-
-        public void ClickedChoice_2(StepChoices choices)
-        {
-            clicked2 = true;
-            if (choices.stepChoice2.isGoodAnswer) trust++;
-
-            UIManager.instance.dialogueText.text = choices.stepChoice2.clientResponse;
-            UIManager.instance.HideChoices();
-        }
-
-        public void ClickedChoice_3(StepChoices choices)
-        {
-            clicked3 = true;
-            if (choices.stepChoice3.isGoodAnswer) trust++;
-
-            UIManager.instance.dialogueText.text = choices.stepChoice3.clientResponse;
-            UIManager.instance.HideChoices();
+            uiManager.dialogueText.text = StepChoiceByIndex(index).clientResponse;
+            uiManager.HideChoices(); 
         }
     }
 }
