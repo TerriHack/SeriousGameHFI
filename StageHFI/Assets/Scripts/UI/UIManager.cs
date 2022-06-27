@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
         if (instance != null)
         {
             Debug.LogError("Plus d'une instance de UIManager dans la scène");
+            Destroy(gameObject);
             return;
         }
 
