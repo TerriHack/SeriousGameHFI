@@ -38,7 +38,7 @@ namespace Dialogue
                     DisplayCheck();
                     return;
                 }
-
+                
                 _currentStep = _currentStep.nextStep;
                 DisplayCheck();
             }
