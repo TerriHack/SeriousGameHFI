@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 
 namespace Dialogue
 {
@@ -14,8 +15,13 @@ namespace Dialogue
 
         private UIManager uiManager => UIManager.instance;
         
+        [SerializeField] [Range(0, 0.2f)] private float normalDialogueSpeed;
+        [SerializeField] [Range(0, 0.2f)] private float accelerateDialogueSpeed;
+        private float _currentDialogueSpeed;
+        
         private void Start()
         {
+            _currentDialogueSpeed = normalDialogueSpeed;
             _currentStep = startStep;
             DisplayStep();
         }
@@ -24,6 +30,12 @@ namespace Dialogue
         {
             if (Input.GetKeyDown(KeyCode.Space)) // Pour passer au discour d'après
             {
+                if (uiManager.dialogueText.text != _currentStep.message)
+                {
+                    _currentDialogueSpeed = accelerateDialogueSpeed;
+                    return;
+                }
+
                 if (_currentStep is StepChoices choices)
                 {
                     _currentStep = clickedIndex switch
@@ -46,6 +58,9 @@ namespace Dialogue
 
         private void DisplayCheck()
         {
+            if (_currentStep.newMood != null) uiManager.characterImage.sprite = _currentStep.newMood;
+            if (_currentStep.newBackground != null) uiManager.backgroundImage.sprite = _currentStep.newBackground;
+
             switch (_currentStep)
             {
                 case StepDiscours: 
@@ -66,7 +81,38 @@ namespace Dialogue
             }
         }
 
-        private void DisplayStep() =>  uiManager.dialogueText.text = _currentStep.message;
+        private void DisplayStep()
+        {
+            _currentDialogueSpeed = normalDialogueSpeed;
+            StartCoroutine(TypeSentence(_currentStep.message));
+        }
+
+        IEnumerator TypeSentence(string currentSentence)
+        {
+            uiManager.dialogueText.text = "";
+            bool inBalise = false;
+
+            foreach (char letter in currentSentence)
+            {
+                uiManager.dialogueText.text += letter;
+            
+                if (inBalise && letter != '>') continue;
+
+                if (inBalise && letter == '>')
+                {
+                    inBalise = false;
+                    continue;
+                }
+
+                if (letter == '<')
+                {
+                    inBalise = true;
+                    continue;
+                }
+            
+                yield return new WaitForSeconds(_currentDialogueSpeed);
+            }
+        }
 
         private void SetTextById(params int[] ids)
         {

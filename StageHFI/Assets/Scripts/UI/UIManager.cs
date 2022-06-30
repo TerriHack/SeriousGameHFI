@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] choiceText;
 
     public TextMeshProUGUI dialogueText;
+
+    public Image characterImage;
+    public Image backgroundImage;
 
     private void Awake()
     {

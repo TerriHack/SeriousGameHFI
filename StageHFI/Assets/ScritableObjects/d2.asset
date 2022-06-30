@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5ce45744dcd904f9a382b9ad37afde, type: 3}
   m_Name: d2
   m_EditorClassIdentifier: 
-  message: disc 2
+  message: Blabla blibli bloulou 2
   nextStep: {fileID: 11400000, guid: c2fb23bf766a19a44b3cbd019b9b25d4, type: 2}
+  newMood: {fileID: 0}
+  newBackground: {fileID: 0}

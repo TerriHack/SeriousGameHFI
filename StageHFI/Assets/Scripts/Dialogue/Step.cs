@@ -9,5 +9,7 @@ namespace Dialogue
         [TextArea] 
         public string message;
         public Step nextStep;
+        public Sprite newMood;
+        public Sprite newBackground;
     }
 }
