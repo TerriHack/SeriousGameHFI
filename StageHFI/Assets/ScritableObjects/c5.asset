@@ -14,20 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: Choices tmtc 5
   nextStep: {fileID: 11400000, guid: 9a51d694a10c9ed4e9c09d1fe54f5384, type: 2}
-  newMood: {fileID: 0}
   newBackground: {fileID: 0}
   stepChoice1:
     choiceText: c1
     clientResponse: choix 1
     isGoodAnswer: 1
+    isBadAnswer: 0
+    newMood: 2
     nextStepAnswer: {fileID: 11400000, guid: a04218478f001444d884cc4925f8af67, type: 2}
   stepChoice2:
     choiceText: c2
     clientResponse: choix 2
     isGoodAnswer: 0
+    isBadAnswer: 0
+    newMood: 0
     nextStepAnswer: {fileID: 11400000, guid: 0392bb2dbc1470c4eb84b01992a34548, type: 2}
   stepChoice3:
     choiceText: c3
     clientResponse: choix 3
     isGoodAnswer: 0
+    isBadAnswer: 1
+    newMood: 3
     nextStepAnswer: {fileID: 11400000, guid: ffb1ed266aad49941a3ecf4852d0c77b, type: 2}

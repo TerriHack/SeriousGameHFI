@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class OptionsTween : MonoBehaviour
 {
-
     [Header("Animation Curves")]
     public LeanTweenType curveIn;
     public LeanTweenType curveOut;

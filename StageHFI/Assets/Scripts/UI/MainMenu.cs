@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
     private GameObject quitPopUp;
     [SerializeField]
     private RectTransform background;
-
     
     private void Start()
     {
@@ -24,11 +23,8 @@ public class MainMenu : MonoBehaviour
         LeanTween.alpha(background, 0, 0);
     }
     
-    public void StartGame()
-    {
-        // SceneManager.LoadScene("INSERT SCENE NAME");
-    }
-
+    public void StartGame() => SceneManager.LoadScene("MainScene");
+    
     public void OpenQuitPopUp()
     {
         LeanTween.scale(quitPopUp,Vector3.one, 0.4f).setEase(curveIn);
@@ -47,9 +43,5 @@ public class MainMenu : MonoBehaviour
         LeanTween.alpha(background, 0, 0.4f).setEase(curveIn);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-    
+    public void QuitGame() => Application.Quit();
 }

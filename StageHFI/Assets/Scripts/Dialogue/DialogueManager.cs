@@ -13,19 +13,20 @@ namespace Dialogue
         private int _trust;
 
         private int _obtainedInfoIndex;
-
         private int _clickedIndex;
+        private int _whoIsTalking; // 0 == roland, 1 == vous, 2 == rémi
+        
+        [SerializeField] private string[] charactersNames;
 
         private UIManager uiManager => UIManager.instance;
         
         [SerializeField] [Range(0, 0.2f)] private float normalDialogueSpeed;
         [SerializeField] [Range(0, 0.2f)] private float accelerateDialogueSpeed;
         private float _currentDialogueSpeed;
-
         private string _targetMessage;
 
         [SerializeField] private EventSystem eventSystem;
-        
+
         private void Start()
         {
             _currentDialogueSpeed = normalDialogueSpeed;
@@ -39,6 +40,7 @@ namespace Dialogue
             }
             DisplayStep();
             CheckTargetMessage();
+            DisplayName(1);
         }
 
         private void Update()
@@ -99,19 +101,20 @@ namespace Dialogue
 
         private void DisplayCheck()
         {
-            if (_currentStep.newMood != null) uiManager.characterImage.sprite = _currentStep.newMood;
             if (_currentStep.newBackground != null) uiManager.backgroundImage.sprite = _currentStep.newBackground;
 
             switch (_currentStep)
             {
-                case StepDiscours: 
+                case StepDiscours discours: 
                     DisplayStep();
+                    DisplayName(discours.whoIsTalkingIndex);
                     break;
                 case StepInformation info:
                     if (_trust >= info.trustCost)
                     {
                         DisplayStep();
                         GotNewInfo();
+                        DisplayName(0);
                     }
                     else
                     {
@@ -122,9 +125,16 @@ namespace Dialogue
                 case StepChoices choices: 
                     DisplayStep();
                     DisplayChoices(choices);
+                    DisplayName(0);
                     break;
             }
             CheckTargetMessage();
+        }
+        
+        private void DisplayName(int whoIsTalkingIndex)
+        {
+            _whoIsTalking = whoIsTalkingIndex;
+            uiManager.nameText.text = charactersNames[whoIsTalkingIndex];
         }
 
         private void DisplayStep()
@@ -162,11 +172,7 @@ namespace Dialogue
 
         private void SetTextById(params int[] ids)
         {
-            foreach (var id in ids)
-            {
-                uiManager.choiceText[id].text = StepChoiceByIndex(id).choiceText;
-            }
-            
+            foreach (var id in ids) uiManager.choiceText[id].text = StepChoiceByIndex(id).choiceText;
             uiManager.DisplayPossibleChoices();
         }
         
@@ -174,10 +180,7 @@ namespace Dialogue
        
         private StepChoice StepChoiceByIndex(int id)
         {
-            if (_currentStep is not StepChoices step)
-            {
-                throw new Exception("Current step isn't choice but you clicked on a choice ??");
-            }
+            if (_currentStep is not StepChoices step) throw new Exception("Current step isn't choice but you clicked on a choice ??");
 
             return id switch
             {
@@ -191,9 +194,12 @@ namespace Dialogue
         public void ClickChoice(int index)
         {
             _clickedIndex = index;
-            
+
+            if (_whoIsTalking == 0) uiManager.characterImage.sprite = uiManager.rolandMoods[StepChoiceByIndex(index).newMood];
+            else if (_whoIsTalking == 2) uiManager.characterImage.sprite = uiManager.rémiMoods[StepChoiceByIndex(index).newMood];
+
             if (StepChoiceByIndex(index).isGoodAnswer) _trust += 10;
-            else _trust -= 10;
+            else if (StepChoiceByIndex(index).isBadAnswer) _trust -= 10;
 
             uiManager.trustPercentText.text = _trust + "%";
             

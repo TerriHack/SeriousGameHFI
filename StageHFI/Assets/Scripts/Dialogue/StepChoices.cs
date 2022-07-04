@@ -18,6 +18,8 @@ namespace Dialogue
         [TextArea]
         public string clientResponse;
         public bool isGoodAnswer;
+        public bool isBadAnswer;
+        public int newMood; // 0 == neutre, 1 == triste, 2 == heureux, 3 == vénère
         public Step nextStepAnswer;
     }
 }

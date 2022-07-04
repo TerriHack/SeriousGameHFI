@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea632dc379af25a49984872aa4efb45f, type: 3}
   m_Name: i3
   m_EditorClassIdentifier: 
-  message: Info info info info 3
+  message: info 3 (client)
   nextStep: {fileID: 11400000, guid: 5c2d9e250e3380540a164e976636803b, type: 2}
   newMood: {fileID: 0}
   newBackground: {fileID: 0}

@@ -10,9 +10,13 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI[] choiceText;
 
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
 
     public Image characterImage;
     public Image backgroundImage;
+
+    public Sprite[] rolandMoods;
+    public Sprite[] rémiMoods;
 
     public TextMeshProUGUI trustPercentText;
 
