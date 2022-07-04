@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI trustPercentText;
 
+    public Sprite blockedInfoSprite;
+    public Sprite gotInfoSprite;
+
+    public Image[] infoIcones;
+
     private void Awake()
     {
         if (instance != null)

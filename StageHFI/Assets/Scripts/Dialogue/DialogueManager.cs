@@ -12,6 +12,8 @@ namespace Dialogue
 
         private int _trust;
 
+        private int _obtainedInfoIndex;
+
         private int _clickedIndex;
 
         private UIManager uiManager => UIManager.instance;
@@ -31,6 +33,10 @@ namespace Dialogue
             _clickedIndex = -1;
             _trust = 50;
             uiManager.trustPercentText.text = _trust + "%";
+            foreach (var image in uiManager.infoIcones)
+            {
+                image.sprite = uiManager.blockedInfoSprite;
+            }
             DisplayStep();
             CheckTargetMessage();
         }
@@ -101,8 +107,12 @@ namespace Dialogue
                 case StepDiscours: 
                     DisplayStep();
                     break;
-                case StepInformation info: 
-                    if (_trust >= info.trustCost) DisplayStep();
+                case StepInformation info:
+                    if (_trust >= info.trustCost)
+                    {
+                        DisplayStep();
+                        GotNewInfo();
+                    }
                     else
                     {
                         _currentStep = info.nextStep;
@@ -191,6 +201,12 @@ namespace Dialogue
             uiManager.HideChoices(); 
             CheckTargetMessage();
             eventSystem.SetSelectedGameObject(null);
+        }
+
+        private void GotNewInfo()
+        {
+            _obtainedInfoIndex++;
+            uiManager.infoIcones[_obtainedInfoIndex -= 1].sprite = uiManager.gotInfoSprite;
         }
     }
 }
