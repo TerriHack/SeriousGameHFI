@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 namespace Dialogue
 {
@@ -11,50 +12,80 @@ namespace Dialogue
 
         public int trust;
 
-        [SerializeField] private int _clickedIndex = -1;
+        private int _clickedIndex;
 
         private UIManager uiManager => UIManager.instance;
         
         [SerializeField] [Range(0, 0.2f)] private float normalDialogueSpeed;
         [SerializeField] [Range(0, 0.2f)] private float accelerateDialogueSpeed;
         private float _currentDialogueSpeed;
+
+        [SerializeField]  private string _targetMessage;
+
+        [SerializeField] private EventSystem eventSystem;
         
         private void Start()
         {
             _currentDialogueSpeed = normalDialogueSpeed;
             _currentStep = startStep;
+            _clickedIndex = -1;
             DisplayStep();
+            CheckTargetMessage();
         }
 
         private void Update()
         {
-            Debug.Log(_currentStep);
-
-            if (Input.GetKeyDown(KeyCode.Space)) // Pour passer au discour d'après
+            // Pour passer au discour d'après
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (uiManager.dialogueText.text != _currentStep.message)
+                if (uiManager.dialogueText.text != _targetMessage)
                 {
                     _currentDialogueSpeed = accelerateDialogueSpeed;
-                    if (_currentStep is not StepChoices) return;
-                }
-                
-                if (_currentStep is StepChoices choices)
-                {
-                    _currentStep = _clickedIndex switch
-                    {
-                        0 => choices.stepChoice1.nextStepAnswer != null ? _currentStep = choices.stepChoice1.nextStepAnswer : _currentStep.nextStep,
-                        1 => choices.stepChoice2.nextStepAnswer != null ? _currentStep = choices.stepChoice2.nextStepAnswer : _currentStep.nextStep,
-                        2 => choices.stepChoice3.nextStepAnswer != null ? _currentStep = choices.stepChoice3.nextStepAnswer : _currentStep.nextStep,
-                        _ => _currentStep
-                    };
-
-                    _clickedIndex = -1;
-                    DisplayCheck();
                     return;
                 }
                 
-                _currentStep = _currentStep.nextStep;
+                if (_currentStep is StepChoices)
+                {
+                    if (_clickedIndex >= 0) GoToNextScene();
+                }
+                else GoToNextScene();
+            }
+        }
+
+        private void GoToNextScene()
+        {
+            if (_currentStep is StepChoices choices)
+            {
+                _currentStep = _clickedIndex switch
+                {
+                    0 => choices.stepChoice1.nextStepAnswer != null ? _currentStep = choices.stepChoice1.nextStepAnswer : _currentStep.nextStep, 
+                    1 => choices.stepChoice2.nextStepAnswer != null ? _currentStep = choices.stepChoice2.nextStepAnswer : _currentStep.nextStep,
+                    2 => choices.stepChoice3.nextStepAnswer != null ? _currentStep = choices.stepChoice3.nextStepAnswer : _currentStep.nextStep,
+                    _ => _currentStep
+                };
+                
+                _clickedIndex = -1;
                 DisplayCheck();
+                return;
+            }
+                
+            _currentStep = _currentStep.nextStep; 
+            DisplayCheck();
+        }
+
+        private void CheckTargetMessage()
+        {
+            if (_currentStep is not StepChoices stepChoices) _targetMessage = _currentStep.message;
+            else
+            {
+                _targetMessage = _clickedIndex switch
+                {
+                    0 => stepChoices.stepChoice1.clientResponse,
+                    1 => stepChoices.stepChoice2.clientResponse,
+                    2 => stepChoices.stepChoice3.clientResponse,
+                    -1 => _currentStep.message,
+                    _ => _currentStep.message
+                };
             }
         }
 
@@ -66,7 +97,7 @@ namespace Dialogue
             switch (_currentStep)
             {
                 case StepDiscours: 
-                    DisplayStep(); 
+                    DisplayStep();
                     break;
                 case StepInformation info: 
                     if (trust >= info.trustCost) DisplayStep();
@@ -81,6 +112,7 @@ namespace Dialogue
                     DisplayChoices(choices);
                     break;
             }
+            CheckTargetMessage();
         }
 
         private void DisplayStep()
@@ -152,6 +184,8 @@ namespace Dialogue
 
             StartCoroutine(TypeSentence(StepChoiceByIndex(index).clientResponse));
             uiManager.HideChoices(); 
+            CheckTargetMessage();
+            eventSystem.SetSelectedGameObject(null);
         }
     }
 }
