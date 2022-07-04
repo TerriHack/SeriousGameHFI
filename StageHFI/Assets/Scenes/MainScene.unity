@@ -1094,7 +1094,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startStep: {fileID: 11400000, guid: 9a51d694a10c9ed4e9c09d1fe54f5384, type: 2}
   trust: 0
-  normalDialogueSpeed: 0.06
+  _clickedIndex: -1
+  normalDialogueSpeed: 0.2
   accelerateDialogueSpeed: 0.025
 --- !u!4 &1031460803
 Transform:

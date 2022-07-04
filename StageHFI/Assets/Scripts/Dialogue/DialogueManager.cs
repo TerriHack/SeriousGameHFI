@@ -11,7 +11,7 @@ namespace Dialogue
 
         public int trust;
 
-        private int clickedIndex;
+        [SerializeField] private int _clickedIndex = -1;
 
         private UIManager uiManager => UIManager.instance;
         
@@ -28,17 +28,19 @@ namespace Dialogue
 
         private void Update()
         {
+            Debug.Log(_currentStep);
+
             if (Input.GetKeyDown(KeyCode.Space)) // Pour passer au discour d'après
             {
                 if (uiManager.dialogueText.text != _currentStep.message)
                 {
                     _currentDialogueSpeed = accelerateDialogueSpeed;
-                    return;
+                    if (_currentStep is not StepChoices) return;
                 }
-
+                
                 if (_currentStep is StepChoices choices)
                 {
-                    _currentStep = clickedIndex switch
+                    _currentStep = _clickedIndex switch
                     {
                         0 => choices.stepChoice1.nextStepAnswer != null ? _currentStep = choices.stepChoice1.nextStepAnswer : _currentStep.nextStep,
                         1 => choices.stepChoice2.nextStepAnswer != null ? _currentStep = choices.stepChoice2.nextStepAnswer : _currentStep.nextStep,
@@ -46,7 +48,7 @@ namespace Dialogue
                         _ => _currentStep
                     };
 
-                    clickedIndex =-1;
+                    _clickedIndex = -1;
                     DisplayCheck();
                     return;
                 }
@@ -144,14 +146,11 @@ namespace Dialogue
         
         public void ClickChoice(int index)
         {
-            clickedIndex = index;
+            _clickedIndex = index;
             
-            if (StepChoiceByIndex(index).isGoodAnswer)
-            {
-                trust++;
-            }
+            if (StepChoiceByIndex(index).isGoodAnswer) trust += 10;
 
-            uiManager.dialogueText.text = StepChoiceByIndex(index).clientResponse;
+            StartCoroutine(TypeSentence(StepChoiceByIndex(index).clientResponse));
             uiManager.HideChoices(); 
         }
     }
