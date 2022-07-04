@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     public Image characterImage;
     public Image backgroundImage;
 
+    public TextMeshProUGUI trustPercentText;
+
     private void Awake()
     {
         if (instance != null)

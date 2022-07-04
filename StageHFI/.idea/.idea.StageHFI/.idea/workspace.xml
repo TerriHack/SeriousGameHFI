@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/TabletCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/TabletCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/i3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/i3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +80,7 @@
       <workItem from="1656512396484" duration="1196000" />
       <workItem from="1656590890407" duration="4422000" />
       <workItem from="1656690583324" duration="3662000" />
-      <workItem from="1656932756417" duration="3904000" />
+      <workItem from="1656932756417" duration="4843000" />
     </task>
     <servers />
   </component>

@@ -16,4 +16,4 @@ MonoBehaviour:
   nextStep: {fileID: 11400000, guid: 5c2d9e250e3380540a164e976636803b, type: 2}
   newMood: {fileID: 0}
   newBackground: {fileID: 0}
-  trustCost: 1
+  trustCost: 60

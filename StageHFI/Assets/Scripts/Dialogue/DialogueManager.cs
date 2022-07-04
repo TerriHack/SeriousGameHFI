@@ -10,7 +10,7 @@ namespace Dialogue
         [SerializeField] private Step startStep;
         private Step _currentStep;
 
-        public int trust;
+        private int _trust;
 
         private int _clickedIndex;
 
@@ -20,7 +20,7 @@ namespace Dialogue
         [SerializeField] [Range(0, 0.2f)] private float accelerateDialogueSpeed;
         private float _currentDialogueSpeed;
 
-        [SerializeField]  private string _targetMessage;
+        private string _targetMessage;
 
         [SerializeField] private EventSystem eventSystem;
         
@@ -29,6 +29,8 @@ namespace Dialogue
             _currentDialogueSpeed = normalDialogueSpeed;
             _currentStep = startStep;
             _clickedIndex = -1;
+            _trust = 50;
+            uiManager.trustPercentText.text = _trust + "%";
             DisplayStep();
             CheckTargetMessage();
         }
@@ -100,7 +102,7 @@ namespace Dialogue
                     DisplayStep();
                     break;
                 case StepInformation info: 
-                    if (trust >= info.trustCost) DisplayStep();
+                    if (_trust >= info.trustCost) DisplayStep();
                     else
                     {
                         _currentStep = info.nextStep;
@@ -180,8 +182,11 @@ namespace Dialogue
         {
             _clickedIndex = index;
             
-            if (StepChoiceByIndex(index).isGoodAnswer) trust += 10;
+            if (StepChoiceByIndex(index).isGoodAnswer) _trust += 10;
+            else _trust -= 10;
 
+            uiManager.trustPercentText.text = _trust + "%";
+            
             StartCoroutine(TypeSentence(StepChoiceByIndex(index).clientResponse));
             uiManager.HideChoices(); 
             CheckTargetMessage();
