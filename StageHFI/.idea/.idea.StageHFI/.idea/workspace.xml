@@ -3,33 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/BGTest_01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/BGTest_01.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/BGTest_02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/BGTest_02.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/CahraTest_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/CahraTest_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/CharaTest_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/CharaTest_02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/PlaceHolder_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/PlaceHolder_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/PlaceHolder_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/PlaceHolder_2.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepDiscours.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepDiscours.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OptionsTween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/OptionsTween.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tablet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tablet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/c5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/c5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/d1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/d2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/d4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/i3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/i3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +81,8 @@
       <workItem from="1656512396484" duration="1196000" />
       <workItem from="1656590890407" duration="4422000" />
       <workItem from="1656690583324" duration="3662000" />
-      <workItem from="1656932756417" duration="10960000" />
+      <workItem from="1656932756417" duration="11020000" />
+      <workItem from="1657017538523" duration="10253000" />
     </task>
     <servers />
   </component>

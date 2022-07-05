@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using UI;
 using UnityEngine.EventSystems;
 
 namespace Dialogue
@@ -26,7 +27,7 @@ namespace Dialogue
         private string _targetMessage;
 
         [SerializeField] private EventSystem eventSystem;
-
+        
         private void Start()
         {
             _currentDialogueSpeed = normalDialogueSpeed;
@@ -143,7 +144,7 @@ namespace Dialogue
             StartCoroutine(TypeSentence(_currentStep.message));
         }
 
-        IEnumerator TypeSentence(string currentSentence)
+        private IEnumerator TypeSentence(string currentSentence)
         {
             uiManager.dialogueText.text = "";
             bool inBalise = false;
@@ -173,7 +174,7 @@ namespace Dialogue
         private void SetTextById(params int[] ids)
         {
             foreach (var id in ids) uiManager.choiceText[id].text = StepChoiceByIndex(id).choiceText;
-            uiManager.DisplayPossibleChoices();
+            uiManager.ChoiceOn = true;
         }
         
         private void DisplayChoices(StepChoices choices) => SetTextById(0,1,2);
@@ -193,6 +194,8 @@ namespace Dialogue
         
         public void ClickChoice(int index)
         {
+            eventSystem.SetSelectedGameObject(null);
+        
             _clickedIndex = index;
 
             if (_whoIsTalking == 0) uiManager.characterImage.sprite = uiManager.rolandMoods[StepChoiceByIndex(index).newMood];
@@ -200,13 +203,12 @@ namespace Dialogue
 
             if (StepChoiceByIndex(index).isGoodAnswer) _trust += 10;
             else if (StepChoiceByIndex(index).isBadAnswer) _trust -= 10;
-
+            
             uiManager.trustPercentText.text = _trust + "%";
             
             StartCoroutine(TypeSentence(StepChoiceByIndex(index).clientResponse));
-            uiManager.HideChoices(); 
+            uiManager.ChoiceOn = false; 
             CheckTargetMessage();
-            eventSystem.SetSelectedGameObject(null);
         }
 
         private void GotNewInfo()
