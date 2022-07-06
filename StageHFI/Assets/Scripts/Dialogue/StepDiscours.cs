@@ -6,5 +6,6 @@ namespace Dialogue
     public class StepDiscours : Step
     {
         public int whoIsTalkingIndex;
+        public bool isUnlockingTheTablet;
     }
 }

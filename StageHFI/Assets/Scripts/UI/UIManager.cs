@@ -18,6 +18,9 @@ namespace UI
         public Image characterImage;
         public Image backgroundImage;
 
+        [SerializeField] private RectTransform tablet;
+        [SerializeField] private RectTransform discourPanel;
+
         public Sprite[] rolandMoods;
         public Sprite[] rémiMoods;
 
@@ -30,7 +33,7 @@ namespace UI
 
        [SerializeField] private bool _choiceOn;
 
-        public bool ChoiceOn
+       public bool ChoiceOn
         {
             private get
             {
@@ -61,11 +64,16 @@ namespace UI
 
         private void Start()
         {
+            tablet.gameObject.SetActive(false);
+
             foreach (var obj in choiceBtn)
             {
                 LeanTween.alpha(obj.GetComponent<RectTransform>(), 0, 0);
                 obj.SetActive(false);
             }
+            
+            LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1, 1.5f).setDelay(0.5f);
+            LeanTween.alpha(discourPanel, 0.7f, 1.5f).setDelay(1.5f);
         }
 
         private void FixedUpdate()
@@ -86,7 +94,7 @@ namespace UI
 
         private void DisplayTextChoices(TMP_Text txt)
         {
-            if(txt.alpha < 1 && txt.GetComponentInParent<Image>().color.a >= 1) txt.alpha += Time.fixedDeltaTime * txtFadeSpeed; 
+            if(txt.alpha < 1 && txt.GetComponentInParent<Image>().color.a >= 1) txt.alpha += Time.fixedDeltaTime * txtFadeSpeed;
         } 
         
         private IEnumerator HideChoices()
@@ -109,6 +117,12 @@ namespace UI
         {
             yield return new WaitForSeconds(btnFadeDelay + btnFadeDelay / 2);
             go.SetActive(false);
+        }
+
+        public void UnlockTablet()
+        {
+            tablet.gameObject.SetActive(true);
+            LeanTween.alpha(tablet, 1, 0.5f).setDelay(1);
         }
     }
 }

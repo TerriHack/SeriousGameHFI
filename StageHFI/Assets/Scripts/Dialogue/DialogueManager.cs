@@ -39,7 +39,7 @@ namespace Dialogue
             {
                 image.sprite = uiManager.blockedInfoSprite;
             }
-            DisplayStep();
+            Invoke(nameof(DisplayStep), 2.5f);
             CheckTargetMessage();
             DisplayName(1);
         }
@@ -124,7 +124,8 @@ namespace Dialogue
 
             switch (_currentStep)
             {
-                case StepDiscours discours: 
+                case StepDiscours discours:
+                    if (discours.isUnlockingTheTablet) uiManager.UnlockTablet();
                     DisplayStep();
                     DisplayName(discours.whoIsTalkingIndex);
                     break;

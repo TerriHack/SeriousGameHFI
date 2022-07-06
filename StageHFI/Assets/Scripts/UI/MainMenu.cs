@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,19 +13,20 @@ namespace UI
         [Space]
         [SerializeField] private GameObject quitPopUp;
         [SerializeField] private RectTransform background;
-    
-        private void Start()
+        [SerializeField] private RectTransform characters;
+
+        private void Start() => quitPopUp.transform.localScale = Vector3.zero;
+
+        public void StartGame() => StartCoroutine(PlayStartAnimation());
+
+        private IEnumerator PlayStartAnimation()
         {
-            // Reset Scale
-            quitPopUp.transform.localScale = Vector3.zero;
-        
-            // Reset scale & alpha
-            LeanTween.scale(background, Vector3.zero, 0);
-            LeanTween.alpha(background, 0, 0);
+            LeanTween.alpha(characters, 0, 1);
+            gameObject.LeanMoveX(-500, 2f).setEase(curveOut);
+            yield return new WaitForSeconds(2);
+            SceneManager.LoadScene("MainScene");
         }
-    
-        public void StartGame() => SceneManager.LoadScene("MainScene");
-    
+
         public void OpenQuitPopUp()
         {
             LeanTween.scale(quitPopUp,Vector3.one, 0.4f).setEase(curveIn);
