@@ -61,19 +61,24 @@ namespace UI
 
         private void Start()
         {
-            foreach (var obj in choiceBtn) LeanTween.alpha(obj.GetComponent<RectTransform>(), 0, 0);
+            foreach (var obj in choiceBtn)
+            {
+                LeanTween.alpha(obj.GetComponent<RectTransform>(), 0, 0);
+                obj.SetActive(false);
+            }
         }
 
         private void FixedUpdate()
         {
             if (_choiceOn) foreach (var txt in choiceText) DisplayTextChoices(txt);
-            else foreach (var txt in choiceText) HideTextChoices(txt);
+            else if (choiceBtn[1].activeSelf) foreach (var txt in choiceText) HideTextChoices(txt);
         }
 
         private IEnumerator DisplayPossibleChoices()
         {
             foreach (var obj in choiceBtn)
             {
+                obj.SetActive(true);
                 LeanTween.alpha(obj.GetComponent<RectTransform>(), 1f, btnFadeDelay);
                 yield return new WaitForSeconds(delayBetweenButton);
             }
@@ -89,6 +94,7 @@ namespace UI
             foreach (var obj in choiceBtn)
             {
                 LeanTween.alpha(obj.GetComponent<RectTransform>(), 0f, btnFadeDelay);
+                StartCoroutine(DisableChoices(obj));
                 yield return new WaitForSeconds(delayBetweenButton);
             }
         }
@@ -97,6 +103,12 @@ namespace UI
         {
             if (txt.GetComponentInParent<Image>().color.a <= 0) txt.alpha = 0;
             else if (txt.alpha > 0) txt.alpha -= Time.deltaTime * txtFadeSpeed;
-        } 
+        }
+        
+        private IEnumerator DisableChoices(GameObject go)
+        {
+            yield return new WaitForSeconds(btnFadeDelay + btnFadeDelay / 2);
+            go.SetActive(false);
+        }
     }
 }

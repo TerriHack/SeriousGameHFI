@@ -44,9 +44,11 @@ namespace Dialogue
             DisplayName(1);
         }
 
-        private void Update()
+        private void Update() => OnSpaceKeyDown();
+
+        // Pc Input
+        private void OnSpaceKeyDown()
         {
-            // Pour passer au discour d'après
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (uiManager.dialogueText.text != _targetMessage)
@@ -61,6 +63,22 @@ namespace Dialogue
                 }
                 else GoToNextScene();
             }
+        }
+        
+        // Mobile Input
+        public void OnTapeScreen() 
+        {
+            if (uiManager.dialogueText.text != _targetMessage)
+            {
+                _currentDialogueSpeed = accelerateDialogueSpeed;
+                return;
+            }
+                
+            if (_currentStep is StepChoices)
+            {
+                if (_clickedIndex >= 0) GoToNextScene();
+            }
+            else GoToNextScene();
         }
 
         private void GoToNextScene()
