@@ -289,8 +289,10 @@ MonoBehaviour:
   - {fileID: 1988913363}
   - {fileID: 247646569}
   - {fileID: 1537464171}
-  fadeButtonTime: 0.4
-  delayBetweenButton: 0.2
+  _choiceOn: 0
+  btnFadeDelay: 1
+  delayBetweenButton: 0.3
+  txtFadeSpeed: 0.8
 --- !u!4 &350691038
 Transform:
   m_ObjectHideFlags: 0

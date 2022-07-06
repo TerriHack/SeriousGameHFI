@@ -28,7 +28,7 @@ namespace UI
 
         public Image[] infoIcones;
 
-        private bool _choiceOn;
+       [SerializeField] private bool _choiceOn;
 
         public bool ChoiceOn
         {
@@ -39,22 +39,13 @@ namespace UI
             set
             {
                 _choiceOn = value;
-                if (_choiceOn)
-                {
-                    StartCoroutine(DisplayPossibleChoices());
-                    StartCoroutine(DisplayTextChoices());
-                }
-                else 
-                {
-                    StartCoroutine(HideChoices());
-                    StartCoroutine(HideTextChoices());
-                }
+                StartCoroutine(_choiceOn ? DisplayPossibleChoices() : HideChoices());
             }
         }
-    
 
-        [SerializeField] [Range(0,1)] private float fadeButtonTime;
-        [SerializeField] [Range(0,1)] private float delayBetweenButton;
+        [SerializeField] [Range(0,5)] private float btnFadeDelay;
+        [SerializeField] [Range(0,5)] private float delayBetweenButton;
+        [SerializeField] [Range(0,5)] private float txtFadeSpeed;
 
         private void Awake()
         {
@@ -71,40 +62,41 @@ namespace UI
         private void Start()
         {
             foreach (var obj in choiceBtn) LeanTween.alpha(obj.GetComponent<RectTransform>(), 0, 0);
-            foreach (var txt in choiceText) txt.alpha = 0;
         }
-        
+
+        private void FixedUpdate()
+        {
+            if (_choiceOn) foreach (var txt in choiceText) DisplayTextChoices(txt);
+            else foreach (var txt in choiceText) HideTextChoices(txt);
+        }
+
         private IEnumerator DisplayPossibleChoices()
         {
             foreach (var obj in choiceBtn)
             {
-                LeanTween.alpha(obj.GetComponent<RectTransform>(), 1f, fadeButtonTime);
+                LeanTween.alpha(obj.GetComponent<RectTransform>(), 1f, btnFadeDelay);
                 yield return new WaitForSeconds(delayBetweenButton);
             }
         }
-        private IEnumerator DisplayTextChoices()
+
+        private void DisplayTextChoices(TMP_Text txt)
         {
-            foreach (var txt in choiceText)
-            {
-                LeanTween.alpha(txt.GetComponent<RectTransform>(), 1f, fadeButtonTime);
-                yield return new WaitForSeconds(delayBetweenButton);
-            }
-        }
+            if(txt.alpha < 1 && txt.GetComponentInParent<Image>().color.a >= 1) txt.alpha += Time.fixedDeltaTime * txtFadeSpeed; 
+        } 
+        
         private IEnumerator HideChoices()
         {
             foreach (var obj in choiceBtn)
             {
-                LeanTween.alpha(obj.GetComponent<RectTransform>(), 0f, fadeButtonTime);
+                LeanTween.alpha(obj.GetComponent<RectTransform>(), 0f, btnFadeDelay);
                 yield return new WaitForSeconds(delayBetweenButton);
             }
         }
-        private IEnumerator HideTextChoices()
+
+        private void HideTextChoices(TMP_Text txt)
         {
-            foreach (var txt in choiceText)
-            {
-                LeanTween.alpha(txt.GetComponent<RectTransform>(), 0f, fadeButtonTime);
-                yield return new WaitForSeconds(delayBetweenButton);
-            }
-        }
+            if (txt.GetComponentInParent<Image>().color.a <= 0) txt.alpha = 0;
+            else if (txt.alpha > 0) txt.alpha -= Time.deltaTime * txtFadeSpeed;
+        } 
     }
 }
