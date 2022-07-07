@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: balabla 2 (client)
   nextStep: {fileID: 11400000, guid: c2fb23bf766a19a44b3cbd019b9b25d4, type: 2}
-  newMood: {fileID: 0}
   newBackground: {fileID: 0}
   whoIsTalkingIndex: 0
+  isUnlockingTheTablet: 1

@@ -76,6 +76,11 @@ namespace UI
             LeanTween.alpha(discourPanel, 0.7f, 1.5f).setDelay(1.5f);
         }
 
+        private void Update()
+        {
+            if (nameText.alpha < 1) nameText.alpha += Time.deltaTime * 0.2f;
+        } 
+        
         private void FixedUpdate()
         {
             if (_choiceOn) foreach (var txt in choiceText) DisplayTextChoices(txt);
@@ -94,6 +99,7 @@ namespace UI
 
         private void DisplayTextChoices(TMP_Text txt)
         {
+            if (txt.transform.parent.gameObject.activeSelf == false) return;
             if(txt.alpha < 1 && txt.GetComponentInParent<Image>().color.a >= 1) txt.alpha += Time.fixedDeltaTime * txtFadeSpeed;
         } 
         
@@ -109,7 +115,7 @@ namespace UI
 
         private void HideTextChoices(TMP_Text txt)
         {
-            if (txt.GetComponentInParent<Image>().color.a <= 0) txt.alpha = 0;
+            if (txt.transform.parent.gameObject.activeSelf == false || txt.GetComponentInParent<Image>().color.a <= 0) txt.alpha = 0;
             else if (txt.alpha > 0) txt.alpha -= Time.deltaTime * txtFadeSpeed;
         }
         

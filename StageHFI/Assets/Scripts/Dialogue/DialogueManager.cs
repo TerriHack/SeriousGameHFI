@@ -43,29 +43,8 @@ namespace Dialogue
             CheckTargetMessage();
             DisplayName(1);
         }
-
-        private void Update() => OnSpaceKeyDown();
-
-        // Pc Input
-        private void OnSpaceKeyDown()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (uiManager.dialogueText.text != _targetMessage)
-                {
-                    _currentDialogueSpeed = accelerateDialogueSpeed;
-                    return;
-                }
-                
-                if (_currentStep is StepChoices)
-                {
-                    if (_clickedIndex >= 0) GoToNextScene();
-                }
-                else GoToNextScene();
-            }
-        }
         
-        // Mobile Input
+        // Quand le joueur touche l'écran (sauf les btn)
         public void OnTapeScreen() 
         {
             if (uiManager.dialogueText.text != _targetMessage)
