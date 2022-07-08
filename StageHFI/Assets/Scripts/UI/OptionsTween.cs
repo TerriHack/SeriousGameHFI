@@ -7,9 +7,8 @@ namespace UI
         [Header("Animation Curves")]
         public LeanTweenType curveIn;
         public LeanTweenType curveOut;
-    
-        [Space]
-        [SerializeField] private RectTransform background;
+        
+   //     [SerializeField] private RectTransform background;
     
         private void Start()
         {

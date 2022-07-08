@@ -12,10 +12,16 @@ namespace UI
 
         [Space]
         [SerializeField] private GameObject quitPopUp;
-        [SerializeField] private RectTransform background;
+        [SerializeField] private GameObject creditsPopUp;
+
+     //   [SerializeField] private RectTransform background;
         [SerializeField] private RectTransform characters;
 
-        private void Start() => quitPopUp.transform.localScale = Vector3.zero;
+        private void Start()
+        {
+            quitPopUp.transform.localScale = Vector3.zero;
+            creditsPopUp.transform.localScale = Vector3.zero;
+        }
 
         public void StartGame() => StartCoroutine(PlayStartAnimation());
 
@@ -32,8 +38,8 @@ namespace UI
             LeanTween.scale(quitPopUp,Vector3.one, 0.4f).setEase(curveIn);
         
             // Make the background appear (scale & alpha)
-            LeanTween.scale(background, Vector3.one, 0);
-            LeanTween.alpha(background, 0.4f, 0.4f).setEase(curveIn);
+            /*LeanTween.scale(background, Vector3.one, 0);
+            LeanTween.alpha(background, 0.4f, 0.4f).setEase(curveIn);*/
         }
     
         public void CloseQuitPopUp()
@@ -41,8 +47,26 @@ namespace UI
             LeanTween.scale(quitPopUp,Vector3.zero, 0.4f).setEase(curveIn);
         
             // Make the background disappear (scale & alpha)
-            LeanTween.scale(background, Vector3.zero, 0);
-            LeanTween.alpha(background, 0, 0.4f).setEase(curveIn);
+            /*LeanTween.scale(background, Vector3.zero, 0);
+            LeanTween.alpha(background, 0, 0.4f).setEase(curveIn);*/
+        }
+        
+        public void OpenCreditsPopUp()
+        {
+            LeanTween.scale(creditsPopUp,Vector3.one, 0.4f).setEase(curveIn);
+        
+            // Make the background appear (scale & alpha)
+            /*LeanTween.scale(background, Vector3.one, 0);
+            LeanTween.alpha(background, 0.4f, 0.4f).setEase(curveIn);*/
+        }
+    
+        public void CloseCreditsPopUp()
+        {
+            LeanTween.scale(creditsPopUp,Vector3.zero, 0.4f).setEase(curveIn);
+        
+            // Make the background disappear (scale & alpha)
+            /*LeanTween.scale(background, Vector3.zero, 0);
+            LeanTween.alpha(background, 0, 0.4f).setEase(curveIn);*/
         }
 
         public void QuitGame() => Application.Quit();
