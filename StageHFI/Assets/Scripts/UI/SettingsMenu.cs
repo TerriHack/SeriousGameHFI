@@ -12,14 +12,14 @@ namespace UI
         public Slider musicSlider;
         public Slider soundSlider;
 
-        public void Start()
+     /*   public void Start()
         {
             audioMixer.GetFloat("Music", out float musicValueForSlider);
             musicSlider.value = musicValueForSlider;
 
             audioMixer.GetFloat("Sound", out float soundValueForSlider);
             soundSlider.value = soundValueForSlider;
-        }
+        } */
 
         public void SetMusicVolume(float volume)
         {

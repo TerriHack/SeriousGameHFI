@@ -22,16 +22,16 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    void Start()
+  /*  void Start()
     {
         audioSource.clip = playlist[0];
         audioSource.Play();
     }
-
-    void Update()
+*/
+ /*   void Update()
     {
         if (!audioSource.isPlaying) PlayNextSong();
-    }
+    } */
 
     void PlayNextSong()
     {

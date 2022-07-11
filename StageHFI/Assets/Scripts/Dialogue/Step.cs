@@ -10,5 +10,6 @@ namespace Dialogue
         public string message;
         public Step nextStep;
         public Sprite newBackground;
+        public int whoIsTalkingIndex; // 0 == roland, 1 == vous, 2 == rémi
     }
 }

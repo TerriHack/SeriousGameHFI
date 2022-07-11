@@ -108,10 +108,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4834674944248279152}
+  - {fileID: 2777001509816690778}
   - {fileID: 4391523067451866777}
   - {fileID: 1255897430644023752}
   - {fileID: 4834674945533166051}
-  - {fileID: 2777001509816690778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -212,7 +212,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4834674944325227441}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3518492508958491506, guid: 67882f5e0e373bb49b3544bf33092f66, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3518492508958491506, guid: 67882f5e0e373bb49b3544bf33092f66, type: 3}
       propertyPath: m_AnchorMax.x
@@ -499,7 +499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8575302927829471142, guid: 1e36871af618dd042ba45910c625de54, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8575302927829471142, guid: 1e36871af618dd042ba45910c625de54, type: 3}
       propertyPath: m_AnchorMax.x
@@ -624,8 +624,9 @@ PrefabInstance:
       propertyPath: m_text
       value: "<b>Game Design : </b>\nAntoine Dubuc - Game Design & UI\nNo\xE9 Brasier
         - Narration & Ecriture\nPierre Ferrari - Producing & Programmation\nVictor
-        Regard - Musique & Sons\n\n<b>Game Art :</b>\nAlice Gumpier - Personnages\nJuliette
-        Blondel - Personnages\nErnest Lanoy - D\xE9cors\nLucky Coquant - Interfaces"
+        Regard - Musique & Sons\n\n<b>Game Art :</b>\nAlice Gumpier - Personnages
+        & D\xE9cors\nJuliette Blondel - Personnages\nErnest Lanoy - D\xE9cors\nLucky
+        Coquant - Interfaces & Effets Sp\xE9ciaux"
       objectReference: {fileID: 0}
     - target: {fileID: 814368365894228073, guid: d3723a31df1925643accc6df9fd4f488, type: 3}
       propertyPath: m_fontSize
@@ -681,7 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3216949178602888222, guid: d3723a31df1925643accc6df9fd4f488, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3216949178602888222, guid: d3723a31df1925643accc6df9fd4f488, type: 3}
       propertyPath: m_AnchorMax.x

@@ -73,7 +73,7 @@ namespace UI
             }
             
             LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1, 1.5f).setDelay(0.5f);
-            LeanTween.alpha(discourPanel, 0.7f, 1.5f).setDelay(1.5f);
+            LeanTween.alpha(discourPanel, 1, 1.5f).setDelay(1.5f);
         }
 
         private void Update()

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5ce45744dcd904f9a382b9ad37afde, type: 3}
+  m_Name: IA.1
+  m_EditorClassIdentifier: 
+  message: "Ne t'en fais pas, je serai l\xE0 pour te conseiller et t'orienter tout
+    du long ! Mais revoyons tout de m\xEAme les bases pour te rassurer. Notre objectif
+    final est de faire signer un mandat \xE0 notre client. Pour cela, nous devrons
+    lui proposer une estimation de son bien. \xC0 quoi devrait correspondre le prix
+    que tu offriras ?"
+  nextStep: {fileID: 11400000, guid: 864e0f9fa04c44a4a8c4879621d5d96e, type: 2}
+  newBackground: {fileID: 0}
+  whoIsTalkingIndex: 2
+  isUnlockingTheTablet: 0

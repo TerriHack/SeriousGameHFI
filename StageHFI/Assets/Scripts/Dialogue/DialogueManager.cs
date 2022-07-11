@@ -41,7 +41,7 @@ namespace Dialogue
             }
             Invoke(nameof(DisplayStep), 2.5f);
             CheckTargetMessage();
-            DisplayName(1);
+            DisplayName(2);
         }
         
         // Quand le joueur touche l'écran (sauf les btn)
@@ -76,8 +76,9 @@ namespace Dialogue
                 DisplayCheck();
                 return;
             }
-                
-            _currentStep = _currentStep.nextStep; 
+
+            if (_currentStep.nextStep is StepChoices) _currentStep.nextStep.message = _currentStep.message;
+            _currentStep = _currentStep.nextStep;
             DisplayCheck();
         }
 
@@ -121,10 +122,10 @@ namespace Dialogue
                         DisplayCheck();
                     }
                     break;
-                case StepChoices choices: 
-                    DisplayStep();
+                case StepChoices choices:
+                    uiManager.dialogueText.text = _currentStep.message;
                     DisplayChoices(choices);
-                    DisplayName(0);
+                    DisplayName(choices.whoIsTalkingIndex);
                     break;
             }
             CheckTargetMessage();
@@ -167,6 +168,8 @@ namespace Dialogue
             
                 yield return new WaitForSeconds(_currentDialogueSpeed);
             }
+
+            if (uiManager.dialogueText.text == currentSentence && _currentStep.nextStep is StepChoices) GoToNextScene();
         }
 
         private void SetTextById(params int[] ids)
@@ -196,8 +199,8 @@ namespace Dialogue
         
             _clickedIndex = index;
 
-            if (_whoIsTalking == 0) uiManager.characterImage.sprite = uiManager.rolandMoods[StepChoiceByIndex(index).newMood];
-            else if (_whoIsTalking == 2) uiManager.characterImage.sprite = uiManager.rémiMoods[StepChoiceByIndex(index).newMood];
+        //    if (_whoIsTalking == 0) uiManager.characterImage.sprite = uiManager.rolandMoods[StepChoiceByIndex(index).newMood];
+        //    else if (_whoIsTalking == 2) uiManager.characterImage.sprite = uiManager.rémiMoods[StepChoiceByIndex(index).newMood];
 
             if (StepChoiceByIndex(index).isGoodAnswer) _trust += 10;
             else if (StepChoiceByIndex(index).isBadAnswer) _trust -= 10;
