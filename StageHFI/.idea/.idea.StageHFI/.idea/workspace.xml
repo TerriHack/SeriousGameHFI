@@ -3,32 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/MainMenuCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/MainMenuCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/TabletCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/TabletCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepDiscours.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepDiscours.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/c5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/c5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/d8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/i3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/i3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -118,7 +97,8 @@
       <workItem from="1657225823190" duration="14000" />
       <workItem from="1657280464635" duration="4168000" />
       <workItem from="1657469196908" duration="186000" />
-      <workItem from="1657547806419" duration="4169000" />
+      <workItem from="1657547806419" duration="4758000" />
+      <workItem from="1657624614155" duration="6678000" />
     </task>
     <servers />
   </component>

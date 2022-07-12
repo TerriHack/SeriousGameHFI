@@ -15,7 +15,6 @@ namespace Dialogue
 
         private int _obtainedInfoIndex;
         private int _clickedIndex;
-        private int _whoIsTalking; // 0 == roland, 1 == vous, 2 == rémi
         
         [SerializeField] private string[] charactersNames;
 
@@ -34,7 +33,7 @@ namespace Dialogue
             _currentStep = startStep;
             _clickedIndex = -1;
             _trust = 50;
-            uiManager.trustPercentText.text = _trust + "%";
+            uiManager.trustText.text = "confiance en vous :" + _trust + "%";
             foreach (var image in uiManager.infoIcones)
             {
                 image.sprite = uiManager.blockedInfoSprite;
@@ -131,12 +130,8 @@ namespace Dialogue
             CheckTargetMessage();
         }
         
-        private void DisplayName(int whoIsTalkingIndex)
-        {
-            _whoIsTalking = whoIsTalkingIndex;
-            uiManager.nameText.text = charactersNames[whoIsTalkingIndex];
-        }
-
+        private void DisplayName(int whoIsTalkingIndex) => uiManager.nameText.text = charactersNames[whoIsTalkingIndex];
+        
         private void DisplayStep()
         {
             _currentDialogueSpeed = normalDialogueSpeed;
@@ -205,7 +200,7 @@ namespace Dialogue
             if (StepChoiceByIndex(index).isGoodAnswer) _trust += 10;
             else if (StepChoiceByIndex(index).isBadAnswer) _trust -= 10;
             
-            uiManager.trustPercentText.text = _trust + "%";
+            uiManager.trustText.text = "confiance en vous :" + _trust + "%";
             
             StartCoroutine(TypeSentence(StepChoiceByIndex(index).clientResponse));
             uiManager.ChoiceOn = false; 

@@ -24,7 +24,8 @@ namespace UI
         public Sprite[] rolandMoods;
         public Sprite[] rémiMoods;
 
-        public TextMeshProUGUI trustPercentText;
+        public TextMeshProUGUI trustText;
+        [SerializeField] private Gradient trustBanerGradient;
 
         public Sprite blockedInfoSprite;
         public Sprite gotInfoSprite;
@@ -42,7 +43,7 @@ namespace UI
             set
             {
                 _choiceOn = value;
-                StartCoroutine(_choiceOn ? DisplayPossibleChoices() : HideChoices());
+                StartCoroutine(_choiceOn ? DisplayPossibleChoices() : HideChoices(btnFadeDelay, delayBetweenButton));
             }
         }
 
@@ -66,11 +67,7 @@ namespace UI
         {
             tablet.gameObject.SetActive(false);
 
-            foreach (var obj in choiceBtn)
-            {
-                LeanTween.alpha(obj.GetComponent<RectTransform>(), 0, 0);
-                obj.SetActive(false);
-            }
+            StartCoroutine(HideChoices(0,0));
             
             LeanTween.alpha(characterImage.GetComponent<RectTransform>(), 1, 1.5f).setDelay(0.5f);
             LeanTween.alpha(discourPanel, 1, 1.5f).setDelay(1.5f);
@@ -84,7 +81,7 @@ namespace UI
         private void FixedUpdate()
         {
             if (_choiceOn) foreach (var txt in choiceText) DisplayTextChoices(txt);
-            else if (choiceBtn[1].activeSelf) foreach (var txt in choiceText) HideTextChoices(txt);
+            else foreach (var txt in choiceText) HideTextChoices(txt);
         }
 
         private IEnumerator DisplayPossibleChoices()
@@ -103,13 +100,13 @@ namespace UI
             if(txt.alpha < 1 && txt.GetComponentInParent<Image>().color.a >= 1) txt.alpha += Time.fixedDeltaTime * txtFadeSpeed;
         } 
         
-        private IEnumerator HideChoices()
+        private IEnumerator HideChoices(float fadeDelay, float delayBetweenObj)
         {
             foreach (var obj in choiceBtn)
             {
-                LeanTween.alpha(obj.GetComponent<RectTransform>(), 0f, btnFadeDelay);
-                StartCoroutine(DisableChoices(obj));
-                yield return new WaitForSeconds(delayBetweenButton);
+                LeanTween.alpha(obj.GetComponent<RectTransform>(), 0f, fadeDelay);
+                StartCoroutine(DisableChoices(obj, fadeDelay));
+                yield return new WaitForSeconds(delayBetweenObj);
             }
         }
 
@@ -119,16 +116,16 @@ namespace UI
             else if (txt.alpha > 0) txt.alpha -= Time.deltaTime * txtFadeSpeed;
         }
         
-        private IEnumerator DisableChoices(GameObject go)
+        private IEnumerator DisableChoices(GameObject go, float fadeDelay)
         {
-            yield return new WaitForSeconds(btnFadeDelay + btnFadeDelay / 2);
+            yield return new WaitForSeconds(fadeDelay + 0.1f);
             go.SetActive(false);
         }
 
         public void UnlockTablet()
         {
             tablet.gameObject.SetActive(true);
-            LeanTween.alpha(tablet, 1, 0.5f).setDelay(1);
+            LeanTween.alpha(tablet.GetComponent<RectTransform>(), 1, 1f).setDelay(1);
         }
     }
 }
