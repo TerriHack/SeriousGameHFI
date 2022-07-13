@@ -23,6 +23,7 @@ namespace UI
         // On Click function it triggers the tablet
         public void TriggerTablet()
         {
+            UIManager.instance.UpdateTrustBanerColor();
             eventSystem.SetSelectedGameObject(null);
 
             tabletOn = !tabletOn;

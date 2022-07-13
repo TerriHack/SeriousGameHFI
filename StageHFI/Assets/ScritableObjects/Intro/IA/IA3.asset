@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5ce45744dcd904f9a382b9ad37afde, type: 3}
+  m_Name: IA3
+  m_EditorClassIdentifier: 
+  message: "Ne t'en fais pas, je serai l\xE0 pour te conseiller et t'orienter tout
+    du long ! Mais revoyons tout de m\xEAme les bases pour te rassurer."
+  nextStep: {fileID: 11400000, guid: a632cca1c7b63d74f9249cf689308294, type: 2}
+  newBackground: {fileID: 0}
+  whoIsTalkingIndex: 2
+  isUnlockingTheTablet: 0

@@ -9,9 +9,13 @@ namespace UI
     {
         public static UIManager instance;
 
+        [Header("Choice")]
         public GameObject[] choiceBtn;
         public TextMeshProUGUI[] choiceText;
+        private bool _choiceOn;
 
+        [Header("Dialogue")]
+        [SerializeField] private RectTransform discourPanel;
         public TextMeshProUGUI dialogueText;
         public TextMeshProUGUI nameText;
 
@@ -19,20 +23,22 @@ namespace UI
         public Image backgroundImage;
 
         [SerializeField] private RectTransform tablet;
-        [SerializeField] private RectTransform discourPanel;
 
+        [Header("Moods")]
         public Sprite[] rolandMoods;
         public Sprite[] rémiMoods;
 
+        [Header("Trust")]
+        [HideInInspector] public int trust;
         public TextMeshProUGUI trustText;
+        [SerializeField] private Image trustBanerImage;
         [SerializeField] private Gradient trustBanerGradient;
 
+        [Header("Info Icones")]
         public Sprite blockedInfoSprite;
-        public Sprite gotInfoSprite;
+        public Sprite[] gotInfoSprites;
+        public Image[] infoImages;
 
-        public Image[] infoIcones;
-
-       [SerializeField] private bool _choiceOn;
 
        public bool ChoiceOn
         {
@@ -65,6 +71,11 @@ namespace UI
 
         private void Start()
         {
+            UpdateTrustText();
+            
+            trust = 50;
+            foreach (var image in infoImages) image.sprite = blockedInfoSprite;
+
             tablet.gameObject.SetActive(false);
 
             StartCoroutine(HideChoices(0,0));
@@ -83,6 +94,10 @@ namespace UI
             if (_choiceOn) foreach (var txt in choiceText) DisplayTextChoices(txt);
             else foreach (var txt in choiceText) HideTextChoices(txt);
         }
+
+        public void UpdateTrustText() => trustText.text = "confiance en vous : " + trust + "%";
+        public void UpdateTrustBanerColor() => trustBanerImage.color = trustBanerGradient.Evaluate(trust / 100f);
+        
 
         private IEnumerator DisplayPossibleChoices()
         {

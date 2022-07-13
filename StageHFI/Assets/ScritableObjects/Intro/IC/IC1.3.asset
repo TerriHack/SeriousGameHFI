@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5ce45744dcd904f9a382b9ad37afde, type: 3}
+  m_Name: IC1.3
+  m_EditorClassIdentifier: 
+  message: "Comprendre ce qu'attend le client et les raisons pour lesquelles il se
+    tient devant nous, voil\xE0 les cl\xE9s de notre m\xE9tier."
+  nextStep: {fileID: 11400000, guid: e1cc3ee0325056e46a0c116331cd7c9d, type: 2}
+  newBackground: {fileID: 0}
+  whoIsTalkingIndex: 2
+  isUnlockingTheTablet: 0

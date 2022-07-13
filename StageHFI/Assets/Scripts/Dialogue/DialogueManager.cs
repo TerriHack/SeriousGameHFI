@@ -11,7 +11,6 @@ namespace Dialogue
         [SerializeField] private Step startStep;
         private Step _currentStep;
 
-        private int _trust;
 
         private int _obtainedInfoIndex;
         private int _clickedIndex;
@@ -32,18 +31,11 @@ namespace Dialogue
             _currentDialogueSpeed = normalDialogueSpeed;
             _currentStep = startStep;
             _clickedIndex = -1;
-            _trust = 50;
-            uiManager.trustText.text = "confiance en vous :" + _trust + "%";
-            foreach (var image in uiManager.infoIcones)
-            {
-                image.sprite = uiManager.blockedInfoSprite;
-            }
             Invoke(nameof(DisplayStep), 2.5f);
             CheckTargetMessage();
             DisplayName(2);
         }
         
-        // Quand le joueur touche l'écran (sauf les btn)
         public void OnTapeScreen() 
         {
             if (uiManager.dialogueText.text != _targetMessage)
@@ -109,7 +101,7 @@ namespace Dialogue
                     DisplayName(discours.whoIsTalkingIndex);
                     break;
                 case StepInformation info:
-                    if (_trust >= info.trustCost)
+                    if (uiManager.trust >= info.trustCost)
                     {
                         DisplayStep();
                         GotNewInfo();
@@ -197,10 +189,10 @@ namespace Dialogue
         //    if (_whoIsTalking == 0) uiManager.characterImage.sprite = uiManager.rolandMoods[StepChoiceByIndex(index).newMood];
         //    else if (_whoIsTalking == 2) uiManager.characterImage.sprite = uiManager.rémiMoods[StepChoiceByIndex(index).newMood];
 
-            if (StepChoiceByIndex(index).isGoodAnswer) _trust += 10;
-            else if (StepChoiceByIndex(index).isBadAnswer) _trust -= 10;
+            if (StepChoiceByIndex(index).isGoodAnswer) uiManager.trust += 10;
+            else if (StepChoiceByIndex(index).isBadAnswer) uiManager.trust -= 10;
             
-            uiManager.trustText.text = "confiance en vous :" + _trust + "%";
+            uiManager.UpdateTrustText();
             
             StartCoroutine(TypeSentence(StepChoiceByIndex(index).clientResponse));
             uiManager.ChoiceOn = false; 
@@ -210,7 +202,7 @@ namespace Dialogue
         private void GotNewInfo()
         {
             _obtainedInfoIndex++;
-            uiManager.infoIcones[_obtainedInfoIndex -= 1].sprite = uiManager.gotInfoSprite;
+            uiManager.infoImages[_obtainedInfoIndex -= 1].sprite = uiManager.gotInfoSprites[_obtainedInfoIndex -= 1];
         }
     }
 }

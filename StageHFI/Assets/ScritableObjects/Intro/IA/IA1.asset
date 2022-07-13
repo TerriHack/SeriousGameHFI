@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5ce45744dcd904f9a382b9ad37afde, type: 3}
+  m_Name: IA1
+  m_EditorClassIdentifier: 
+  message: "Salut coll\xE8gue ! Alors, c'est le grand jour ? Pr\xEAt \xE0 rencontrer
+    le client ?"
+  nextStep: {fileID: 11400000, guid: ab9447e5507a12d45a73643b606a3e1d, type: 2}
+  newBackground: {fileID: 0}
+  whoIsTalkingIndex: 2
+  isUnlockingTheTablet: 0
