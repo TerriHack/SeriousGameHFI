@@ -24,8 +24,10 @@ namespace UI
 
         [SerializeField] private RectTransform tablet;
 
-        [Header("Moods")]
+        [Header("Moods")] 
+        [Tooltip("0 == ne change pas, 1 == Heureux, 2 == triste / Pensif, 3 == vénère / Rassurant, 4 == neutre, 5 == neutre_2")]
         public Sprite[] rolandMoods;
+        [Tooltip("0 == ne change pas, 1 == Heureux, 2 == triste / Pensif, 3 == vénère / Rassurant, 4 == neutre, 5 == neutre_2")]
         public Sprite[] rémiMoods;
 
         [Header("Trust")]

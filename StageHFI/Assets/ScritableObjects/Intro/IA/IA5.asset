@@ -16,4 +16,5 @@ MonoBehaviour:
   nextStep: {fileID: 11400000, guid: 2178c4bc17c2e684eafaf40ab3c83780, type: 2}
   newBackground: {fileID: 0}
   whoIsTalkingIndex: 2
+  newMood: 0
   isUnlockingTheTablet: 0

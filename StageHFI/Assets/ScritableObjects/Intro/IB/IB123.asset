@@ -12,31 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2798e08f6c51fc6449a9696969ee4a0b, type: 3}
   m_Name: IB123
   m_EditorClassIdentifier: 
-  message: 
+  message: " \xC0 quoi devrait correspondre le prix que tu offriras ?"
   nextStep: {fileID: 0}
   newBackground: {fileID: 0}
   whoIsTalkingIndex: 2
+  newMood: 0
   stepChoice1:
     choiceText: "Au prix correspondant le mieux \xE0 la valeur du bien sur le march\xE9."
     clientResponse: "L'estimation doit \xEAtre r\xE9aliste, bien s\xFBr, mais elle
       doit avant tout prendre en compte les attentes du client."
     isGoodAnswer: 0
     isBadAnswer: 0
-    newMood: 0
     nextStepAnswer: {fileID: 11400000, guid: 9688f8f0ae5886a4a9a9fb9f15da3726, type: 2}
+    newMood: 2
   stepChoice2:
     choiceText: Au prix ayant le plus de chances de nous obtenir une vente.
     clientResponse: Ne va pas trop vite en besogne, nous ne ferons aucune vente si
       nous n'avons pas de mandat.
     isGoodAnswer: 0
     isBadAnswer: 0
-    newMood: 0
     nextStepAnswer: {fileID: 11400000, guid: 245468d187d03454ca9ed23d2a64069c, type: 2}
+    newMood: 4
   stepChoice3:
     choiceText: Au prix ayant le plus de chances de nous obtenir la signature du
       mandat.
     clientResponse: "Exact ! Concentrons nous sur notre t\xE2che actuelle, le mandat."
     isGoodAnswer: 0
     isBadAnswer: 0
-    newMood: 0
     nextStepAnswer: {fileID: 11400000, guid: 752e20b0c121d2e4aaf2fa219e8a302f, type: 2}
+    newMood: 1

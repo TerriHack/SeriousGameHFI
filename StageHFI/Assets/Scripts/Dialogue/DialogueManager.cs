@@ -31,7 +31,7 @@ namespace Dialogue
             _currentDialogueSpeed = normalDialogueSpeed;
             _currentStep = startStep;
             _clickedIndex = -1;
-            Invoke(nameof(DisplayStep), 2.5f);
+            Invoke(nameof(DisplayStepMessage), 2.5f);
             CheckTargetMessage();
             DisplayName(2);
         }
@@ -92,18 +92,28 @@ namespace Dialogue
         private void DisplayCheck()
         {
             if (_currentStep.newBackground != null) uiManager.backgroundImage.sprite = _currentStep.newBackground;
-
+            
+            if (_currentStep.newMood != 0)
+            {
+                uiManager.characterImage.sprite = _currentStep.whoIsTalkingIndex switch
+                {
+                    0 => uiManager.rolandMoods[_currentStep.newMood],
+                    2 => uiManager.rémiMoods[_currentStep.newMood],
+                    _ => uiManager.characterImage.sprite
+                };
+            }
+            
             switch (_currentStep)
             {
                 case StepDiscours discours:
                     if (discours.isUnlockingTheTablet) uiManager.UnlockTablet();
-                    DisplayStep();
+                    DisplayStepMessage();
                     DisplayName(discours.whoIsTalkingIndex);
                     break;
                 case StepInformation info:
                     if (uiManager.trust >= info.trustCost)
                     {
-                        DisplayStep();
+                        DisplayStepMessage();
                         GotNewInfo();
                         DisplayName(0);
                     }
@@ -124,7 +134,7 @@ namespace Dialogue
         
         private void DisplayName(int whoIsTalkingIndex) => uiManager.nameText.text = charactersNames[whoIsTalkingIndex];
         
-        private void DisplayStep()
+        private void DisplayStepMessage()
         {
             _currentDialogueSpeed = normalDialogueSpeed;
             StartCoroutine(TypeSentence(_currentStep.message));
@@ -185,9 +195,16 @@ namespace Dialogue
             eventSystem.SetSelectedGameObject(null);
         
             _clickedIndex = index;
-
-        //    if (_whoIsTalking == 0) uiManager.characterImage.sprite = uiManager.rolandMoods[StepChoiceByIndex(index).newMood];
-        //    else if (_whoIsTalking == 2) uiManager.characterImage.sprite = uiManager.rémiMoods[StepChoiceByIndex(index).newMood];
+            
+            if (StepChoiceByIndex(index).newMood != 0)
+            {
+                uiManager.characterImage.sprite = _currentStep.whoIsTalkingIndex switch
+                {
+                    0 => uiManager.rolandMoods[StepChoiceByIndex(index).newMood],
+                    2 => uiManager.rémiMoods[StepChoiceByIndex(index).newMood],
+                    _ => uiManager.characterImage.sprite
+                };
+            }
 
             if (StepChoiceByIndex(index).isGoodAnswer) uiManager.trust += 10;
             else if (StepChoiceByIndex(index).isBadAnswer) uiManager.trust -= 10;

@@ -19,7 +19,7 @@ namespace Dialogue
         public string clientResponse;
         public bool isGoodAnswer;
         public bool isBadAnswer;
-        public int newMood; // 0 == neutre, 1 == triste, 2 == heureux, 3 == vénère
         public Step nextStepAnswer;
+        public int newMood; // 1 == Heureux, 2 == triste / Pensif, 3 == vénère / Rassurant, 4 == neutre, 5 == neutre_2
     }
 }

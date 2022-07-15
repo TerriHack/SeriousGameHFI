@@ -3,60 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasFermé.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasFermé.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertFamille.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertFamille.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertMaison.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertMaison.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertOmbre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertOmbre.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertPassion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertPassion.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertTravail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/Tablette/IconeCadenasOuvertTravail.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/TabletCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas/TabletCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/HFI_Background_Intérieur_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/HFI_Background_Intérieur_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/Remi_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/Remi_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/BAHNSCHRIFT SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UI/BAHNSCHRIFT SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tablet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tablet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA.1.1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA.1.1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA.1.2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA.1.2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA.1.3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA.1.3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB 1.2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB 1.2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB 123.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB 123.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 1.2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 1.2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 1.3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 1.3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 1.4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 1.4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 123.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC 123.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/c5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/c5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/d8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/i3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Proto/i3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB123.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB123.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC123.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC123.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +112,8 @@
       <workItem from="1657469196908" duration="186000" />
       <workItem from="1657547806419" duration="4758000" />
       <workItem from="1657624614155" duration="6678000" />
-      <workItem from="1657711315023" duration="4551000" />
+      <workItem from="1657711315023" duration="4552000" />
+      <workItem from="1657893648115" duration="2120000" />
     </task>
     <servers />
   </component>
