@@ -2,24 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="489cd194-2ef2-4d33-a84f-5410fc867f33" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StageHFI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/HFI_Background_Intérieur_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/HFI_Background_Intérieur_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/Remi_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Characters/Remi_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/BAHNSCHRIFT SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UI/BAHNSCHRIFT SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Step.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/StepChoices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IA/IA3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB123.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IB/IB123.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC123.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScritableObjects/Intro/IC/IC123.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +95,7 @@
       <workItem from="1657547806419" duration="4758000" />
       <workItem from="1657624614155" duration="6678000" />
       <workItem from="1657711315023" duration="4552000" />
-      <workItem from="1657893648115" duration="2120000" />
+      <workItem from="1657893648115" duration="2393000" />
     </task>
     <servers />
   </component>
